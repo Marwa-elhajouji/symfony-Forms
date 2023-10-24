@@ -67,17 +67,14 @@ class User implements UserInterface,PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    // Implémentation des méthodes manquantes de UserInterface
 
     public function getRoles():array
     {
-        // Implémentez la logique pour retourner les rôles de l'utilisateur, par exemple :
         return ['ROLE_USER'];
     }
 
     public function eraseCredentials()
     {
-        // Implémentez la logique pour effacer les informations sensibles de l'utilisateur, si nécessaire.
     }
 
     public function getUsername()
