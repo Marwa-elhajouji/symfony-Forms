@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur notre site !{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="text-center mt-5">
+                {% if app.user is null %}
+                    <h1>Bienvenue sur notre site !</h1>
+                {% else %}
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Vous êtes connecté ! ✅</h1>
+                            <p class="card-text">Voici vos informations :</p>
+                            {% if user is not null %}
+                                <ul class="list-group">
+                                    <li class="list-group-item">Id Number: {{ user.id }}</li>
+                                    <li class="list-group-item">Adresse mail: {{ user.email }}</li>
+                                    <li class="list-group-item">Téléphone: {{ user.phoneNumber }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
